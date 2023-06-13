@@ -3,7 +3,7 @@ const Group = require("../models").group;
 const User = require("../models").user;
 const Court = require("../models").court;
 const groupValidation = require("../validation").groupValidation;
-const ObjectId = require("mongodb").ObjectId;
+const ObjectId = require("mongoose").Types.ObjectId;
 router.use((req, res, next) => {
   console.log("group request is processed");
   next();

@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "http://localhost:8080/api/search";
+const API_URL = "https://badmin-town.onrender.com/api/search";
 class SearchService {
   getAllGroups() {
     return axios.get(API_URL + "/group");

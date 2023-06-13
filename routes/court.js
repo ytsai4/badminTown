@@ -4,7 +4,7 @@ const router = require("express").Router();
 const Court = require("../models").court;
 const Group = require("../models").group;
 const courtValidation = require("../validation").courtValidation;
-const ObjectId = require("mongodb").ObjectId;
+const ObjectId = require("mongoose").Types.ObjectId;
 router.use((req, res, next) => {
   console.log("court request is processed");
   next();
