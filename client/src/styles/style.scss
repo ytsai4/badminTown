@@ -1,0 +1,58 @@
+.card {
+  width: 16rem;
+}
+.offcanvas {
+  --bs-offcanvas-width: 250px;
+}
+.border-primary {
+  border-width: 3px;
+  border-radius: 0.75rem;
+}
+button.groupName {
+  border: none;
+  background: none;
+}
+.search {
+  max-width: 600px;
+  min-width: 330px;
+}
+.form-signin,
+.form-register {
+  max-width: 330px;
+  padding: 1rem;
+}
+.form-signin input[type="email"] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+h5.card-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+:root {
+  --courtGreen: #198964;
+  --courtGreen-10: rgb(23, 122, 89);
+  --courtGreen-20: rgb(20, 105, 77);
+  --courtGreen-rgb: rgb(25, 137, 100);
+  --dotShadow: #25282a;
+  --courtLine: #edf1ff;
+}
+
+.btn-badminton {
+  // --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--courtLine);
+  --bs-btn-bg: var(--courtGreen);
+  --bs-btn-border-color: var(--courtGreen);
+  --bs-btn-hover-color: var(--courtLine);
+  --bs-btn-hover-bg: var(--courtGreen-10);
+  --bs-btn-hover-border-color: var(--courtGreen-10);
+  --bs-btn-focus-shadow-rgb: var(--courtGreen-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--courtGreen-20);
+  --bs-btn-active-border-color: var(--courtGreen-20);
+}
