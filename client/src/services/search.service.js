@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://badmin-town.onrender.com/api/search";
+const API_URL = `${process.env.REACT_APP_BACKEND_API}/search`;
 class SearchService {
   getAllGroups() {
     return axios.get(API_URL + "/group");

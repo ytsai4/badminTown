@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://badmin-town.onrender.com/api/courts";
+const API_URL = `${process.env.REACT_APP_BACKEND_API}/courts`;
 const token = () => {
   if (localStorage.getItem("user")) {
     return JSON.parse(localStorage.getItem("user")).token;
