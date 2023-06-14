@@ -10,6 +10,7 @@ const searchRoute = require("./routes").search;
 const passport = require("passport");
 require("./config/passport")(passport);
 const cors = require("cors");
+const path = require("path");
 const corsOptions = {
   origin: process.env.FRONTEND_URI,
 };
@@ -50,10 +51,10 @@ app.get("/", (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
   //*Set static folder up in production
-  app.use(express.static(path.resolve(__dirname, "client/build")));
+  app.use(express.static(path.resolve("badminTown", "client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+    res.sendFile(path.resolve("badminTown", "client", "build", "index.html"))
   );
 }
 
