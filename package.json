@@ -5,18 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cross-env NODE_ENV=production nodemon index.js",
-    "start": "node server.js",
-    "server": "nodemon server.js",
+    "server": "cross-env NODE_ENV=production nodemon index.js",
     "client": "npm start --prefix client",
-    "clientinstall": "npm install --prefix client",
+    "install": "npm install",
+    "client-install": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-      "install-server": "cd backend && npm install",
-      "start-server": "cd backend && node app.js",
-      "install-client": "cd client && npm install",
-      "build-client": "cd client && npm run build",
-      "start-client": "cd client && npm run start"
+    "render-post-build": "cross-env NODE_ENV=development npm install --prefix client && npm run build --prefix client"
   },
   "author": "Katherine Tsai",
   "license": "ISC",
