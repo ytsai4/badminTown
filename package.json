@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cross-env NODE_ENV=production nodemon index.js",
+    "server": "nodemon index.js",
     "client": "npm start --prefix client",
     "install": "npm install",
     "client-install": "npm install --prefix client && npm run build --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "render-post-build": "cross-env NODE_ENV=development npm install --prefix client && npm run build --prefix client"
+    "render-post-build": "npm install --prefix client && npm run build --prefix client"
   },
   "author": "Katherine Tsai",
   "license": "ISC",
