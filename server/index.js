@@ -10,7 +10,9 @@ const searchRoute = require("./routes").search;
 const passport = require("passport");
 require("./config/passport")(passport);
 const cors = require("cors");
-const path = require("path");
+const corsOptions = {
+  origin: process.env.FRONTEND_URI,
+};
 // Connect to db
 mongoose
   .connect(process.env.MONGODB_CONNECTION)
@@ -24,7 +26,7 @@ mongoose
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(corsOptions));
 // Set routes
 app.use("/api/user", authRoute);
 // Search group by public
@@ -40,6 +42,20 @@ app.use(
   passport.authenticate("jwt", { session: false }),
   courtRoute
 );
+
+// route
+app.get("/", (req, res) => {
+  res.status(201).json({ message: "Connected to Backend!" });
+});
+
+if (process.env.NODE_ENV === "production") {
+  //*Set static folder up in production
+  app.use(express.static("client/build"));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+}
 
 // Set port
 const PORT = process.env.PORT || 8080;
