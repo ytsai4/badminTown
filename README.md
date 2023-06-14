@@ -37,7 +37,7 @@ This project was designed for badminton player who looks for partners to play to
 
 ### Links
 
-- Live Site URL: [BadminTown](https://your-live-site-url.com)
+- Live Site URL: [BadminTown](https://badmintown.onrender.com/)
 
 ## My process
 
