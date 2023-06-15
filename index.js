@@ -16,8 +16,15 @@ const cors = require("cors");
 const corsOptions = {
   origin: /\.onrender\.com$/,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  allowedHeaders: [
+    "Origin",
+    "X-Api-Key",
+    "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+  ],
   credentials: true,
-  preflightContinue: true,
 };
 
 // Connect to db
