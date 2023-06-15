@@ -172,7 +172,7 @@ const CourtComponent = ({ currentUser, setCurrentGroup }) => {
       {searchResult && (
         <>
           {searchResult.length === 0 && (
-            <h4 className="text-center">未找到相符球隊，請重新查詢。</h4>
+            <h4 className="text-center">未找到相符場次，請重新查詢。</h4>
           )}
           {searchResult.length !== 0 && (
             <div className="d-flex flex-wrap gap-3 mx-auto align-items-baseline ps-5 ps-lg-3">

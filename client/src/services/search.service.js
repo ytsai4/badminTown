@@ -2,6 +2,7 @@ import axios from "axios";
 const API_URL = `${process.env.REACT_APP_BACKEND_API}/search`;
 class SearchService {
   getAllGroups() {
+    console.log(API_URL);
     return axios.get(API_URL + "/group");
   }
   getGroupByName(name) {
