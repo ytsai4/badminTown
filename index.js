@@ -14,9 +14,12 @@ const cors = require("cors");
 
 // set origin
 const corsOptions = {
-  origin: "https://badmintown.onrender.com",
+  origin: [
+    "https://badmintown.onrender.com",
+    "http://localhost:3000",
+    "https://badmin-town.onrender.com:10000/",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  optionsSuccessStatus: 204,
 };
 
 // Connect to db
