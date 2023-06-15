@@ -14,7 +14,7 @@ const cors = require("cors");
 
 // set origin
 const corsOptions = {
-  origin: [/\.onrender\.com$/],
+  origin: /\.onrender\.com$/,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 
