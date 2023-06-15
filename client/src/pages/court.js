@@ -8,32 +8,28 @@ const CourtComponent = ({ currentUser, setCurrentGroup }) => {
   let startDate = useRef(null);
   let endDate = useRef(null);
   let searchInput = useRef(null);
-
   let [searchResult, setSearchResult] = useState(null);
 
   useEffect(() => {
-    const handleSearchDate = () => {
-      let today = new Date();
-      let month = `${today.getMonth() + 1}`.padStart(2, "0");
-      let startDay = `${today.getDate()}`.padStart(2, "0");
-      let endDay = `${today.getDate() + 7}`.padStart(2, "0");
-      let startString = `${today.getFullYear()}-${month}-${startDay}`;
-      let endString = `${today.getFullYear()}-${month}-${endDay}`;
-      let data = {
-        startDate: startString,
-        endDate: endString,
-        withoutFull: false,
-      };
-      SearchService.getCourtByDate(data)
-        .then((response) => {
-          setSearchResult(response.data);
-          setMessage("");
-        })
-        .catch((err) => {
-          setMessage(err.response.data.msg);
-        });
+    let today = new Date();
+    let month = `${today.getMonth() + 1}`.padStart(2, "0");
+    let startDay = `${today.getDate()}`.padStart(2, "0");
+    let endDay = `${today.getDate() + 7}`.padStart(2, "0");
+    let startString = `${today.getFullYear()}-${month}-${startDay}`;
+    let endString = `${today.getFullYear()}-${month}-${endDay}`;
+    let data = {
+      startDate: startString,
+      endDate: endString,
+      withoutFull: false,
     };
-    handleSearchDate();
+    SearchService.getCourtByDate(data)
+      .then((response) => {
+        setSearchResult(response.data);
+        setMessage("");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const handleChangeType = (e) => {
