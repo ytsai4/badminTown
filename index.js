@@ -13,12 +13,12 @@ const cors = require("cors");
 // const path = require("path");
 
 // set origin
-const corsOptions = {
-  origin: /\.onrender\.com$/,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  credentials: true,
-  preflightContinue: true,
-};
+// const corsOptions = {
+//   origin: /\.onrender\.com$/,
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+//   credentials: true,
+//   preflightContinue: true,
+// };
 
 // Connect to db
 mongoose
@@ -33,7 +33,7 @@ mongoose
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors(corsOptions));
+app.use(cors());
 // app.use(express.static(path.join(__dirname, "client", "build")));
 // Set routes
 app.use("/api/user", authRoute);

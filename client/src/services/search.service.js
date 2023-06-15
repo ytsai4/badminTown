@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = `${process.env.REACT_APP_BACKEND_API}/search`;
+const API_URL = `${process.env.REACT_APP_LOCAL_API}/search`;
 class SearchService {
   getAllGroups() {
     console.log(API_URL);
