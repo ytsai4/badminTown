@@ -12,13 +12,12 @@ require("./config/passport")(passport);
 const cors = require("cors");
 // const path = require("path");
 
-// // set origin
-// const corsOptions = {
-//   origin: "*",
-//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   optionsSuccessStatus: 204,
-// };
+// set origin
+const corsOptions = {
+  origin: "https://badmintown.onrender.com",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  optionsSuccessStatus: 204,
+};
 
 // Connect to db
 mongoose
@@ -33,7 +32,7 @@ mongoose
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(corsOptions));
 // app.use(express.static(path.join(__dirname, "client", "build")));
 // Set routes
 app.use("/api/user", authRoute);
