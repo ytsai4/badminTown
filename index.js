@@ -13,18 +13,9 @@ const cors = require("cors");
 // const path = require("path");
 
 // set origin
-const whitelist = ["https://badmintown.onrender.com", "http://localhost:10000"];
-
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-
-  credentials: true,
+  origin: [/\.onrender\.com$/],
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 
 // Connect to db
