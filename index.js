@@ -25,6 +25,7 @@ const corsOptions = {
     "Authorization",
   ],
   credentials: true,
+  preflightContinue: true,
 };
 
 // Connect to db
