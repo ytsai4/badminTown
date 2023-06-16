@@ -14,18 +14,11 @@ const cors = require("cors");
 
 // set origin
 const corsOptions = {
-  origin: /\.onrender\.com$/,
+  origin: "https://badmintown.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  allowedHeaders: [
-    "Origin",
-    "X-Api-Key",
-    "X-Requested-With",
-    "Content-Type",
-    "Accept",
-    "Authorization",
-  ],
-  credentials: true,
-  preflightContinue: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 
 // Connect to db
