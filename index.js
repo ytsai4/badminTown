@@ -14,7 +14,7 @@ const cors = require("cors");
 
 // set origin
 const corsOptions = {
-  origin: "https://badmintown.onrender.com/",
+  origin: "https://badmintown.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   allowedHeaders: [
     "Content-Type",
