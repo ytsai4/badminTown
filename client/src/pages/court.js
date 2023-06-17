@@ -143,6 +143,7 @@ const CourtComponent = ({ currentUser, setCurrentGroup }) => {
             <input
               ref={searchInput}
               type="text"
+              name="searchInput"
               placeholder="請輸入要搜尋的內容，留白則僅依日期篩選"
               className="form-control"
             />

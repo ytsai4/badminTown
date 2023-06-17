@@ -69,6 +69,7 @@ const GroupComponent = ({
         <input
           ref={searchInput}
           type="text"
+          name="searchInput"
           placeholder="請輸入欲搜尋的球隊名稱，留白則搜尋所有球隊"
           className="form-control"
         />

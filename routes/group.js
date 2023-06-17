@@ -125,7 +125,7 @@ router.get("/:_id", async (req, res) => {
 router.post("/", async (req, res) => {
   // Check data
   let { error } = groupValidation(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send({ msg: error.details[0].message });
 
   // Store new group
   let { name, description, amount } = req.body;
