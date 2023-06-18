@@ -29,7 +29,8 @@ This project was designed for badminton player who looks for partners to play to
   - Validate JWT-token by Passport
 - Deploy whole project to cloud
   -Backup data from local database to MongoDB Atlas
-  -Deploy to Netify
+  -Deploy to Render.com
+  -[Solve CORS errors](https://community.render.com/t/no-access-control-allow-origin-header/12947)
 
 ### Screenshot
 
