@@ -83,7 +83,11 @@ app.use(
   courtRoute
 );
 app.get("/", (req, res) => {
-  res.status(201).json({ message: "Connected to backend!" });
+  return res.send({ msg: "Connected to backend!" });
+});
+app.get("/healthz", (req, res) => {
+  console.log("health check is processed");
+  return res.status(204).send();
 });
 
 // // if (process.env.NODE_ENV === "production") {

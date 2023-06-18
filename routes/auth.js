@@ -17,7 +17,7 @@ router.get("/:_id", async (req, res) => {
     let foundUser = await User.findById(_id).exec();
     return res.send(foundUser);
   } catch {
-    res.status(500).send({ msg: "找不到該用戶" });
+    return res.status(500).send({ msg: "找不到該用戶" });
   }
 });
 router.post("/register", async (req, res) => {
@@ -41,7 +41,7 @@ router.post("/register", async (req, res) => {
     newUser.save();
     return res.send({ msg: "已成功註冊" });
   } catch {
-    res.status(500).send({ msg: "註冊失敗" });
+    return res.status(500).send({ msg: "註冊失敗" });
   }
 });
 
@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
       });
     });
   } catch (error) {
-    res.status(500).send({ msg: "登入失敗" });
+    return res.status(500).send({ msg: "登入失敗" });
   }
 });
 
@@ -93,7 +93,7 @@ router.patch(
       ).exec();
       return res.send({ msg: "已成功變更名稱" });
     } catch (error) {
-      res.status(500).send({ msg: "變更失敗" });
+      return res.status(500).send({ msg: "變更失敗" });
     }
   }
 );
@@ -125,7 +125,7 @@ router.patch(
         return res.send({ msg: "已成功變更密碼" });
       });
     } catch (error) {
-      res.status(500).send({ msg: "變更失敗" });
+      return res.status(500).send({ msg: "變更失敗" });
     }
   }
 );
